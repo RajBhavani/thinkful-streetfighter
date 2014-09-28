@@ -6,7 +6,7 @@ $( document ).ready(function() {
 
 
 	ryu
-	.on( 'mouseenter', function() {
+	.on( 'mouseenter mouseup', function() {
 		ryu
 		.addClass( 'ryu-ready' )
 		.removeClass( 'ryu-throwing ryu-still' );
@@ -15,7 +15,14 @@ $( document ).ready(function() {
 		ryu
 		.addClass( 'ryu-still' )
 		.removeClass( 'ryu-ready ryu-throwing' );
-	});
+	})
+	// throw hadouken
+	.on( 'mousedown', function() {
+		ryu
+		.addClass( 'ryu-throwing' )
+		.removeClass( 'ryu-ready ryu-still' );
+	})
+	;
 
 
 });
