@@ -8,6 +8,7 @@ main {
 	padding: 0 0 0 100px;
 	min-width: 1200px;
 	height: 500px;
+	display: block;
 }
 
 .ryu-ready,
@@ -24,4 +25,20 @@ main {
 }
 .ryu-throwing {
 	background: url('../images/ryu-throwing-hadouken.png');
+}
+
+.ryu {
+	float: left;
+	width: 659px;
+}
+
+
+.hadouken {
+	background-image: url('../images/hadouken.gif');
+	width: 156px; 
+	height: 90px;
+	position: relative;
+	top: 167px;
+	left: -212px;
+	float: left;
 }
