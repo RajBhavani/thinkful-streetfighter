@@ -17,11 +17,14 @@ main {
 	width: 659px;
 	height: 494px;
 }
-.ryu-ready {
-	background: url('../images/ryu-ready-position.gif');
-}
 .ryu-still {
 	background: url('../images/ryu-standing-still.png');
+}
+.ryu-cool {
+	background: url('../images/ryu-cool.gif');
+}
+.ryu-ready {
+	background: url('../images/ryu-ready-position.gif');
 }
 .ryu-throwing {
 	background: url('../images/ryu-throwing-hadouken.png');

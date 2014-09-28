@@ -2,6 +2,7 @@ $( document ).ready(function() {
 	'use strict';
 
 
+	var KEYS = { x: 88 };
 	var ryu = $( '.ryu' );
 
 
@@ -50,5 +51,15 @@ $( document ).ready(function() {
 	})
 	;
 
+
+	$( document )
+	.on( 'keydown', function( event ) {
+		if ( event.keyCode === KEYS.x ) {
+			ryu.addClass( 'ryu-cool' );
+		}
+	})
+	.on( 'keyup', function() {
+		ryu.removeClass( 'ryu-cool' );
+	});
 
 });
