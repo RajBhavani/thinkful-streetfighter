@@ -11,9 +11,9 @@ main {
 	display: block;
 }
 
-.ryu-ready,
-.ryu-still,
-.ryu-throwing {
+
+.ryu {
+	float: left;
 	width: 659px;
 	height: 494px;
 }
@@ -27,13 +27,9 @@ main {
 	background: url('../images/ryu-throwing-hadouken.png');
 }
 
-.ryu {
-	float: left;
-	width: 659px;
-}
-
 
 .hadouken {
+	display: none;
 	background-image: url('../images/hadouken.gif');
 	width: 156px; 
 	height: 90px;
