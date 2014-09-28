@@ -36,6 +36,7 @@ main {
 	float: left;
 	width: 659px;
 	height: 494px;
+	background-repeat: no-repeat;
 }
 .ryu-still {
 	background: url('../images/ryu-standing-still.png');
