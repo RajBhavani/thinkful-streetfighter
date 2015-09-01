@@ -1,3 +1,60 @@
+var KEY = {
+	x: 88,
+	f: 70
+};
+
+function ryuCoolPose() {
+	// show cool ryu
+	$('.ryu-still').hide();
+	$('.ryu-ready').hide();
+	$('.ryu-throwing').hide();
+	$('.ryu-cool').show();	
+}
+
+	
+function ryuStillPose() {
+	$('.ryu-cool').hide();
+	$('.ryu-still').show();
+}
+
+	
+function handleKeyDown( event ) {
+	// test if x is pressed
+	if (event.keyCode === KEY.x) {
+		ryuCoolPose();
+	} else if (event.keyCode === KEY.f) {
+		throwFireball();
+	} else {
+		console.warn( 'Unknown command:', event.keyCode );
+	}
+}
+
+
+function playHadouken () {
+	$('#hadouken-sound')[0].volume = 0.5;
+	$('#hadouken-sound')[0].load();
+	$('#hadouken-sound')[0].play();
+}
+
+
+function throwFireball() {
+	// Play hadouken sound
+	playHadouken();
+	// Ryu throwing position
+	// show hadouken and animate it to right of screen
+	$('.ryu-ready').hide();
+	$('.ryu-cool').hide();
+	$('.ryu-throwing').show();
+	$('.hadouken').finish().show().animate(
+		{'left': '1020px'},
+		500,
+		function() {
+			$(this).hide();
+			$(this).css('left', '520px');
+			}
+		);
+}	
+
 $(document).ready(function() {
 	$('.ryu').mouseenter(function() {
 		// move Ryu to his ready position
@@ -11,45 +68,17 @@ $(document).ready(function() {
 		$('.ryu-cool').hide();
 		$('.ryu-still').show();
 	});
-	$('.ryu').mousedown(function() {
-		// Play hadouken sound
-		playHadouken();
-		// Ryu throwing position
-		// show hadouken and animate it to right of screen
-		$('.ryu-ready').hide();
-		$('.ryu-cool').hide();
-		$('.ryu-throwing').show();
-		$('.hadouken').finish().show().animate(
-			{'left': '1020px'},
-			500,
-			function() {
-				$(this).hide();
-				$(this).css('left', '520px');
-				}
-			);
-	});
+	
+	$('.ryu').mousedown( throwFireball );
 	$('.ryu').mouseup(function() {
 		// Ryu back to ready position
 		$('.ryu-throwing').hide();
 		$('.ryu-cool').hide();
 		$('.ryu-ready').show();
 	});
-	$('html').keydown(function() {
-		// test if x is pressed
-		if (this.keycode=88) {
-		// show cool ryu
-			$('.ryu-still').hide();
-			$('.ryu-ready').hide();
-			$('.ryu-throwing').hide();
-			$('.ryu-cool').show();
-		};
-	});
-	$('html').keyup(function() {
-		if (true) {
-			$('.ryu-cool').hide();
-			$('.ryu-still').show();
-		};
-	});
+
+	$('html').keydown( handleKeyDown );
+	$('html').keyup( ryuStillPose );
 	$('.directions').hide().fadeIn(2000);
 	$('.play').mousedown(function () {
 		$('.directions').fadeOut(1000);
@@ -57,12 +86,6 @@ $(document).ready(function() {
 });
 
 
-
-function playHadouken () {
-	$('#hadouken-sound')[0].volume = 0.5;
-	$('#hadouken-sound')[0].load();
-	$('#hadouken-sound')[0].play();
-}
 
 /* jQuery 'chaining' method below. 'Traditional' method is above
 
