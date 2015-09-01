@@ -50,6 +50,10 @@ $(document).ready(function() {
 			$('.ryu-still').show();
 		};
 	});
+	$('.directions').hide().fadeIn(2000);
+	$('.play').mousedown(function () {
+		$('.directions').fadeOut(1000);
+	});
 });
 
 

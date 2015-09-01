@@ -59,3 +59,50 @@ body {
 	left: 610px;
 	float: left;
 }
+
+.directions {
+	width: 400px;
+	height: 400px;
+	float: right;
+	text-align: center;
+	margin: 5em 11em 0 0;
+}
+
+.directions > h3 {
+	font-size: 2em;
+	color: #fff;
+	background-color: #cc0000;
+}
+
+.directions > p {
+	font-size: 1.65em;
+	color: #000;
+}
+
+
+button {
+	width: 150px;
+	height: 45px;
+	padding: 4px;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
